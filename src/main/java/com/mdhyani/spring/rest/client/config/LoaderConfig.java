@@ -36,7 +36,7 @@ public class LoaderConfig {
             User userJsonObj  =  jsonMapper.readValue(resource.getInputStream(), User.class);
             log.info("User loaded fom json file {}", userJsonObj);
             List<User> usersJsonList = jsonMapper.readValue(resourceLoader.getResource("classpath:data/users.json").getInputStream(), new TypeReference<List<User>>(){});
-            log.info("usersJsonList loaded from json file {} ", usersJsonList);
+            log.info("Users list loaded fom json file  {} ", usersJsonList);
             Resource resource1 = resourceLoader.getResource("classpath:data/users_data.csv");
             Path path = Path.of(resource1.getFile().getPath());
             List<User> userList = readFileWithFilesApi(path);
